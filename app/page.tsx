@@ -1,10 +1,15 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { useState, useEffect } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   MessageCircle,
   Instagram,
@@ -30,9 +35,9 @@ import {
   Phone,
   Apple,
   Smartphone,
-} from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 // Translations (keeping the same structure)
 const translations = {
@@ -74,7 +79,8 @@ const translations = {
     },
     services: {
       title: "Nossos Serviços",
-      subtitle: "Oferecemos uma gama completa de serviços para cuidar do seu visual com excelência",
+      subtitle:
+        "Oferecemos uma gama completa de serviços para cuidar do seu visual com excelência",
       viewAll: "Ver todos os serviços",
       hideServices: "Ocultar serviços",
       barbotherapy: {
@@ -116,7 +122,8 @@ const translations = {
       },
       consultation: {
         title: "Não sabe qual serviço escolher?",
-        description: "Nossos profissionais estão prontos para te ajudar a escolher o melhor tratamento",
+        description:
+          "Nossos profissionais estão prontos para te ajudar a escolher o melhor tratamento",
         cta: "Falar com Especialista",
       },
     },
@@ -132,7 +139,11 @@ const translations = {
       plans: {
         cut: {
           name: "Corte Black",
-          features: ["Cortes ilimitados", "Todos os dias", "Sem agendamento obrigatório"],
+          features: [
+            "Cortes ilimitados",
+            "Todos os dias",
+            "Sem agendamento obrigatório",
+          ],
           savings: "Economia de até 65%",
         },
         beard: {
@@ -165,12 +176,14 @@ const translations = {
     },
     gallery: {
       title: "Ambiente Seletto",
-      subtitle: "Conheça nosso espaço exclusivo, projetado para o seu conforto e bem-estar",
+      subtitle:
+        "Conheça nosso espaço exclusivo, projetado para o seu conforto e bem-estar",
       areas: {
         workStations: {
           title: "Estações de Trabalho",
           subtitle: "Área de Corte",
-          description: "Equipamentos modernos e ambiente climatizado para sua comodidade",
+          description:
+            "Equipamentos modernos e ambiente climatizado para sua comodidade",
         },
         lounge: {
           title: "Lounge Exclusivo",
@@ -180,12 +193,14 @@ const translations = {
         climate: {
           title: "Ambiente Climatizado",
           subtitle: "Climatização",
-          description: "Temperatura ideal para seu conforto durante todo o atendimento",
+          description:
+            "Temperatura ideal para seu conforto durante todo o atendimento",
         },
         vip: {
           title: "Atendimento Premium",
           subtitle: "Experiência VIP",
-          description: "Cada detalhe pensado para uma experiência única e memorável",
+          description:
+            "Cada detalhe pensado para uma experiência única e memorável",
         },
       },
       features: {
@@ -223,14 +238,16 @@ const translations = {
     },
     schedule: {
       title: "Agende Agora",
-      subtitle: "Baixe nosso app oficial ou entre em contato pelo WhatsApp para agendar seu horário",
+      subtitle:
+        "Baixe nosso app oficial ou entre em contato pelo WhatsApp para agendar seu horário",
       ios: "App iOS",
       android: "App Android",
       whatsapp: "WhatsApp",
     },
     cta: {
       title: "Pronto para transformar seu visual?",
-      subtitle: "Agende com a Seletto agora e descubra o que é ter um visual impecável",
+      subtitle:
+        "Agende com a Seletto agora e descubra o que é ter um visual impecável",
       button: "Agendar Agora",
     },
     footer: {
@@ -259,8 +276,8 @@ const translations = {
     },
     hero: {
       title: "Your style starts here",
-      subtitle: "Transform your look with the expertise and care you deserve",
-      schedule: "Schedule Now",
+      subtitle: "A space where excellence is present in every detail.",
+      schedule: "Schedule Now!",
       whatsapp: "WhatsApp",
       instagram: "Instagram",
     },
@@ -268,9 +285,9 @@ const translations = {
       title: "About Seletto",
       subtitle: "Our Barbershop",
       description1:
-        "At Seletto, every detail has been designed to provide a unique and memorable experience. Our space combines tradition and modernity, offering a fully air-conditioned environment where you can relax while our professionals take care of your look.",
+        "Seletto Barber Shop was designed not only to offer high-quality haircuts and beard grooming but also to provide a personalized experience for each client. Our professionals are specialists in men's services, committed to excellence and comfort.",
       description2:
-        "Enjoy our complimentary coffee while you wait in our exclusive environment, specially designed for your comfort and well-being.",
+        "The barbershop’s atmosphere is warm and welcoming, the ideal place to relax while taking care of your appearance. Here, you’ll find the perfect spot to become the best version of yourself, with quality you can trust.",
       stats: {
         satisfaction: "Satisfaction",
         clients: "Satisfied Clients",
@@ -284,7 +301,8 @@ const translations = {
     },
     services: {
       title: "Our Services",
-      subtitle: "We offer a complete range of services to take care of your look with excellence",
+      subtitle:
+        "We offer a complete range of services to take care of your look with excellence",
       viewAll: "View all services",
       hideServices: "Hide services",
       barbotherapy: {
@@ -326,7 +344,8 @@ const translations = {
       },
       consultation: {
         title: "Don't know which service to choose?",
-        description: "Our professionals are ready to help you choose the best treatment",
+        description:
+          "Our professionals are ready to help you choose the best treatment",
         cta: "Talk to a Specialist",
       },
     },
@@ -375,33 +394,39 @@ const translations = {
     },
     gallery: {
       title: "Seletto Environment",
-      subtitle: "Get to know our exclusive space, designed for your comfort and well-being",
+      subtitle:
+        "Get to know our exclusive space, designed for your comfort and well-being",
       areas: {
         workStations: {
           title: "Work Stations",
           subtitle: "Cutting Area",
-          description: "Modern equipment and air-conditioned environment for your comfort",
+          description:
+            "Modern equipment and air-conditioned environment for your comfort",
         },
         lounge: {
           title: "Exclusive Lounge",
           subtitle: "Waiting Area",
-          description: "Complimentary coffee and comfortable environment while you wait",
+          description:
+            "Complimentary coffee and comfortable environment while you wait",
         },
         climate: {
           title: "Air Conditioned Environment",
           subtitle: "Climate Control",
-          description: "Ideal temperature for your comfort throughout the service",
+          description:
+            "Ideal temperature for your comfort throughout the service",
         },
         vip: {
           title: "Premium Service",
           subtitle: "VIP Experience",
-          description: "Every detail designed for a unique and memorable experience",
+          description:
+            "Every detail designed for a unique and memorable experience",
         },
       },
       features: {
         climatization: {
           title: "Full Climate Control",
-          description: "Environment with controlled temperature for your comfort",
+          description:
+            "Environment with controlled temperature for your comfort",
         },
         coffee: {
           title: "Complimentary Coffee",
@@ -433,14 +458,16 @@ const translations = {
     },
     schedule: {
       title: "Schedule Now",
-      subtitle: "Download our official app or contact us via WhatsApp to schedule your appointment",
+      subtitle:
+        "Download our official app or contact us via WhatsApp to schedule your appointment",
       ios: "iOS App",
       android: "Android App",
       whatsapp: "WhatsApp",
     },
     cta: {
       title: "Ready to transform your look?",
-      subtitle: "Schedule with Seletto now and discover what it's like to have an impeccable look",
+      subtitle:
+        "Schedule with Seletto now and discover what it's like to have an impeccable look",
       button: "Schedule Now",
     },
     footer: {
@@ -456,39 +483,39 @@ const translations = {
       },
     },
   },
-}
+};
 
 export default function SelettoBarbershop() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [language, setLanguage] = useState<"pt" | "en">("pt")
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [selectedReview, setSelectedReview] = useState<number | null>(null)
-  const [showAllServices, setShowAllServices] = useState(false)
-  const [showAllReviews, setShowAllReviews] = useState(false)
-  const [showGalleryDetails, setShowGalleryDetails] = useState(false)
-  const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const [isDesktop, setIsDesktop] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+  const [language, setLanguage] = useState<"pt" | "en">("pt");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedReview, setSelectedReview] = useState<number | null>(null);
+  const [showAllServices, setShowAllServices] = useState(false);
+  const [showAllReviews, setShowAllReviews] = useState(false);
+  const [showGalleryDetails, setShowGalleryDetails] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  const t = translations[language]
+  const t = translations[language];
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1000)
-    return () => clearTimeout(timer)
-  }, [])
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsDesktop(window.innerWidth >= 768)
-    }
+      setIsDesktop(window.innerWidth >= 768);
+    };
 
-    checkScreenSize()
-    window.addEventListener("resize", checkScreenSize)
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
 
-    return () => window.removeEventListener("resize", checkScreenSize)
-  }, [])
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const services = [
     {
@@ -534,7 +561,7 @@ export default function SelettoBarbershop() {
       icon: <Scissors className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f]" />,
       description: t.services.list.cut.description,
     },
-  ]
+  ];
 
   const reviews = [
     { id: 1, image: "/reviews/review-1.png" },
@@ -545,15 +572,15 @@ export default function SelettoBarbershop() {
     { id: 6, image: "/reviews/review-6.png" },
     { id: 7, image: "/reviews/review-7.png" },
     { id: 8, image: "/reviews/review-8.png" },
-  ]
+  ];
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setMobileMenuOpen(false)
-  }
+    setMobileMenuOpen(false);
+  };
 
   // Loading Screen
   if (isLoading) {
@@ -572,7 +599,11 @@ export default function SelettoBarbershop() {
         >
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            transition={{
+              duration: 2,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "linear",
+            }}
             className="mb-4 md:mb-6"
           >
             <Image
@@ -601,7 +632,7 @@ export default function SelettoBarbershop() {
           </motion.p>
         </motion.div>
       </motion.div>
-    )
+    );
   }
 
   return (
@@ -616,8 +647,16 @@ export default function SelettoBarbershop() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-14 md:h-16">
             <div className="flex items-center space-x-2 md:space-x-3">
-              <Image src="/logo.png" alt="Seletto" width={32} height={32} className="md:w-10 md:h-10" />
-              <span className="text-lg md:text-xl font-bold text-[#c8a35f]">SELETTO</span>
+              <Image
+                src="/logo.png"
+                alt="Seletto"
+                width={32}
+                height={32}
+                className="md:w-10 md:h-10"
+              />
+              <span className="text-lg md:text-xl font-bold text-[#c8a35f]">
+                SELETTO
+              </span>
             </div>
 
             {/* Desktop Navigation */}
@@ -666,7 +705,9 @@ export default function SelettoBarbershop() {
                 <button
                   onClick={() => setLanguage("pt")}
                   className={`px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm transition-all ${
-                    language === "pt" ? "bg-[#c8a35f] text-[#0e1728]" : "text-gray-400 hover:text-white"
+                    language === "pt"
+                      ? "bg-[#c8a35f] text-[#0e1728]"
+                      : "text-gray-400 hover:text-white"
                   }`}
                 >
                   PT
@@ -674,7 +715,9 @@ export default function SelettoBarbershop() {
                 <button
                   onClick={() => setLanguage("en")}
                   className={`px-2 py-1 md:px-3 md:py-1 rounded-full text-xs md:text-sm transition-all ${
-                    language === "en" ? "bg-[#c8a35f] text-[#0e1728]" : "text-gray-400 hover:text-white"
+                    language === "en"
+                      ? "bg-[#c8a35f] text-[#0e1728]"
+                      : "text-gray-400 hover:text-white"
                   }`}
                 >
                   EN
@@ -690,8 +733,15 @@ export default function SelettoBarbershop() {
               </Button>
 
               {/* Mobile Menu Button */}
-              <button className="lg:hidden p-1" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                {mobileMenuOpen ? <X className="w-5 h-5 md:w-6 md:h-6" /> : <Menu className="w-5 h-5 md:w-6 md:h-6" />}
+              <button
+                className="lg:hidden p-1"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? (
+                  <X className="w-5 h-5 md:w-6 md:h-6" />
+                ) : (
+                  <Menu className="w-5 h-5 md:w-6 md:h-6" />
+                )}
               </button>
             </div>
           </div>
@@ -848,7 +898,10 @@ export default function SelettoBarbershop() {
               className="w-full sm:w-auto text-[#768ca4] hover:text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105"
               asChild
             >
-              <Link href="https://www.instagram.com/barbeariaseletto/" target="_blank">
+              <Link
+                href="https://www.instagram.com/barbeariaseletto/"
+                target="_blank"
+              >
                 <Instagram className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                 {t.hero.instagram}
               </Link>
@@ -867,7 +920,9 @@ export default function SelettoBarbershop() {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">{t.about.title}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+              {t.about.title}
+            </h2>
             <div className="w-16 md:w-24 h-1 bg-[#c8a35f] mx-auto mb-6 md:mb-8"></div>
           </motion.div>
 
@@ -879,25 +934,43 @@ export default function SelettoBarbershop() {
               viewport={{ once: true }}
               className="order-2 lg:order-1"
             >
-              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#c8a35f]">{t.about.subtitle}</h3>
-              <p className="text-base md:text-lg text-gray-300 mb-4 md:mb-6 leading-relaxed">{t.about.description1}</p>
-              <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">{t.about.description2}</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#c8a35f]">
+                {t.about.subtitle}
+              </h3>
+              <p className="text-base md:text-lg text-gray-300 mb-4 md:mb-6 leading-relaxed">
+                {t.about.description1}
+              </p>
+              <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
+                {t.about.description2}
+              </p>
 
               <div className="grid grid-cols-3 gap-4 md:gap-6">
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-[#c8a35f] mb-1 md:mb-2">100%</div>
-                  <div className="text-xs md:text-sm text-gray-400">{t.about.stats.satisfaction}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#c8a35f] mb-1 md:mb-2">
+                    100%
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-400">
+                    {t.about.stats.satisfaction}
+                  </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-[#c8a35f] mb-1 md:mb-2">5000+</div>
-                  <div className="text-xs md:text-sm text-gray-400">{t.about.stats.clients}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#c8a35f] mb-1 md:mb-2">
+                    5000+
+                  </div>
+                  <div className="text-xs md:text-sm text-gray-400">
+                    {t.about.stats.clients}
+                  </div>
                 </div>
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-1 md:mb-2">
-                    <span className="text-2xl md:text-3xl font-bold text-[#c8a35f]">5.0</span>
+                    <span className="text-2xl md:text-3xl font-bold text-[#c8a35f]">
+                      5.0
+                    </span>
                     <Star className="w-4 h-4 md:w-6 md:h-6 text-[#c8a35f] fill-current ml-1" />
                   </div>
-                  <div className="text-xs md:text-sm text-gray-400">{t.about.stats.rating}</div>
+                  <div className="text-xs md:text-sm text-gray-400">
+                    {t.about.stats.rating}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -913,11 +986,15 @@ export default function SelettoBarbershop() {
                 <div className="grid grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
                   <div className="bg-gradient-to-br from-[#768ca4]/20 to-[#c8a35f]/20 rounded-lg p-3 md:p-4 text-center">
                     <Thermometer className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f] mx-auto mb-2" />
-                    <p className="text-xs md:text-sm text-gray-300">{t.about.features.climatized}</p>
+                    <p className="text-xs md:text-sm text-gray-300">
+                      {t.about.features.climatized}
+                    </p>
                   </div>
                   <div className="bg-gradient-to-br from-[#768ca4]/20 to-[#c8a35f]/20 rounded-lg p-3 md:p-4 text-center">
                     <Coffee className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f] mx-auto mb-2" />
-                    <p className="text-xs md:text-sm text-gray-300">{t.about.features.coffee}</p>
+                    <p className="text-xs md:text-sm text-gray-300">
+                      {t.about.features.coffee}
+                    </p>
                   </div>
                 </div>
                 <div className="aspect-video bg-gradient-to-br from-[#768ca4]/20 to-[#c8a35f]/20 rounded-lg overflow-hidden relative">
@@ -931,7 +1008,9 @@ export default function SelettoBarbershop() {
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                     <div className="text-center p-4">
                       <Crown className="w-8 h-8 md:w-12 md:h-12 text-[#c8a35f] mx-auto mb-2" />
-                      <p className="text-sm md:text-base text-white font-semibold">{t.about.features.premium}</p>
+                      <p className="text-sm md:text-base text-white font-semibold">
+                        {t.about.features.premium}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -942,7 +1021,10 @@ export default function SelettoBarbershop() {
       </section>
 
       {/* Services Section - Mobile Optimized */}
-      <section id="services" className="py-12 md:py-20 bg-[#0e1728] relative overflow-hidden">
+      <section
+        id="services"
+        className="py-12 md:py-20 bg-[#0e1728] relative overflow-hidden"
+      >
         {/* Background Pattern - Reduced for mobile */}
         <div className="absolute inset-0 opacity-3 md:opacity-5">
           <div className="absolute top-10 left-10 w-12 h-12 md:w-20 md:h-20 border border-[#c8a35f] rounded-full"></div>
@@ -958,7 +1040,9 @@ export default function SelettoBarbershop() {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">{t.services.title}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+              {t.services.title}
+            </h2>
             <div className="w-16 md:w-24 h-1 bg-[#c8a35f] mx-auto mb-6 md:mb-8"></div>
             <p className="text-base md:text-xl text-gray-300 max-w-xl md:max-w-2xl mx-auto leading-relaxed">
               {t.services.subtitle}
@@ -979,12 +1063,16 @@ export default function SelettoBarbershop() {
                 <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-center">
                   <div>
                     <Badge className="bg-[#c8a35f] text-[#0e1728] mb-3 md:mb-4 text-xs md:text-sm font-bold">
-                      {language === "pt" ? "EXPERIÊNCIA EXCLUSIVA" : "EXCLUSIVE EXPERIENCE"}
+                      {language === "pt"
+                        ? "EXPERIÊNCIA EXCLUSIVA"
+                        : "EXCLUSIVE EXPERIENCE"}
                     </Badge>
                     <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-[#c8a35f]">
                       {t.services.barbotherapy.title}
                     </h3>
-                    <div className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">R$ 30,00</div>
+                    <div className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">
+                      R$ 30,00
+                    </div>
                     <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-4 md:mb-6 line-clamp-3 lg:line-clamp-none">
                       {t.services.barbotherapy.description}
                     </p>
@@ -1047,7 +1135,9 @@ export default function SelettoBarbershop() {
             {/* Mobile: Show only first 3 services initially, Desktop: Show all */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {services
-                .filter((service) => service.name !== t.services.barbotherapy.title)
+                .filter(
+                  (service) => service.name !== t.services.barbotherapy.title
+                )
                 .slice(0, isDesktop || showAllServices ? undefined : 3)
                 .map((service, index) => (
                   <motion.div
@@ -1064,7 +1154,9 @@ export default function SelettoBarbershop() {
                             {service.icon}
                           </div>
                           <div className="text-right">
-                            <div className="text-sm md:text-lg font-bold text-[#c8a35f]">{service.price}</div>
+                            <div className="text-sm md:text-lg font-bold text-[#c8a35f]">
+                              {service.price}
+                            </div>
                           </div>
                         </div>
                         <h3 className="text-lg md:text-xl font-bold mb-2 text-white group-hover:text-[#c8a35f] transition-colors">
@@ -1112,11 +1204,17 @@ export default function SelettoBarbershop() {
             className="text-center mt-12 md:mt-16"
           >
             <div className="bg-[#1f2937] rounded-lg p-6 md:p-8 border border-[#768ca4]/20">
-              <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 text-white">{t.services.consultation.title}</h3>
+              <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 text-white">
+                {t.services.consultation.title}
+              </h3>
               <p className="text-sm md:text-base text-gray-300 mb-4 md:mb-6 leading-relaxed">
                 {t.services.consultation.description}
               </p>
-              <Button size="lg" className="w-full md:w-auto bg-[#768ca4] hover:bg-[#5a6b7d] text-white" asChild>
+              <Button
+                size="lg"
+                className="w-full md:w-auto bg-[#768ca4] hover:bg-[#5a6b7d] text-white"
+                asChild
+              >
                 <Link
                   href={`https://wa.me/553136575007?text=${
                     language === "pt"
@@ -1156,7 +1254,9 @@ export default function SelettoBarbershop() {
           >
             <div className="flex items-center justify-center mb-4 md:mb-6">
               <Crown className="w-8 h-8 md:w-12 md:h-12 text-[#c8a35f] mr-2 md:mr-4" />
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">{t.club.title}</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                {t.club.title}
+              </h2>
               <Crown className="w-8 h-8 md:w-12 md:h-12 text-[#c8a35f] ml-2 md:ml-4" />
             </div>
             <div className="w-16 md:w-24 h-1 bg-[#c8a35f] mx-auto mb-6 md:mb-8"></div>
@@ -1174,19 +1274,27 @@ export default function SelettoBarbershop() {
             className="mb-8 md:mb-12"
           >
             <div className="bg-gradient-to-r from-[#c8a35f]/20 via-[#768ca4]/20 to-[#c8a35f]/20 rounded-lg p-6 md:p-8 border border-[#c8a35f]/30 text-center">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#c8a35f] mb-4">{t.club.benefits.title}</h3>
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#c8a35f] mb-4">
+                {t.club.benefits.title}
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 <div className="flex items-center justify-center space-x-2 md:space-x-3">
                   <Crown className="w-5 h-5 md:w-6 md:h-6 text-[#c8a35f]" />
-                  <span className="text-sm md:text-base text-white font-semibold">{t.club.benefits.unlimited}</span>
+                  <span className="text-sm md:text-base text-white font-semibold">
+                    {t.club.benefits.unlimited}
+                  </span>
                 </div>
                 <div className="flex items-center justify-center space-x-2 md:space-x-3">
                   <Star className="w-5 h-5 md:w-6 md:h-6 text-[#c8a35f]" />
-                  <span className="text-sm md:text-base text-white font-semibold">{t.club.benefits.priority}</span>
+                  <span className="text-sm md:text-base text-white font-semibold">
+                    {t.club.benefits.priority}
+                  </span>
                 </div>
                 <div className="flex items-center justify-center space-x-2 md:space-x-3">
                   <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-[#c8a35f]" />
-                  <span className="text-sm md:text-base text-white font-semibold">{t.club.benefits.savings}</span>
+                  <span className="text-sm md:text-base text-white font-semibold">
+                    {t.club.benefits.savings}
+                  </span>
                 </div>
               </div>
             </div>
@@ -1239,21 +1347,38 @@ export default function SelettoBarbershop() {
                       {plan.popularText}
                     </div>
                   )}
-                  <CardContent className={`p-6 md:p-8 text-center ${plan.popular ? "pt-10 md:pt-12" : ""}`}>
+                  <CardContent
+                    className={`p-6 md:p-8 text-center ${
+                      plan.popular ? "pt-10 md:pt-12" : ""
+                    }`}
+                  >
                     <Crown className="w-10 h-10 md:w-12 md:h-12 text-[#c8a35f] mx-auto mb-3 md:mb-4" />
-                    <h3 className="text-xl md:text-2xl font-bold text-[#c8a35f] mb-2">{plan.name}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-[#c8a35f] mb-2">
+                      {plan.name}
+                    </h3>
 
                     <div className="mb-4">
-                      <div className="text-2xl md:text-3xl font-bold text-white mb-1">{plan.price}</div>
-                      <div className="text-xs md:text-sm text-gray-400 line-through">{plan.originalPrice}</div>
-                      <div className="text-xs md:text-sm text-green-400 font-semibold">{plan.savings}</div>
+                      <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                        {plan.price}
+                      </div>
+                      <div className="text-xs md:text-sm text-gray-400 line-through">
+                        {plan.originalPrice}
+                      </div>
+                      <div className="text-xs md:text-sm text-green-400 font-semibold">
+                        {plan.savings}
+                      </div>
                     </div>
 
                     <div className="mb-6 space-y-2">
                       {plan.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center justify-center space-x-2">
+                        <div
+                          key={idx}
+                          className="flex items-center justify-center space-x-2"
+                        >
                           <div className="w-2 h-2 bg-[#c8a35f] rounded-full"></div>
-                          <span className="text-gray-300 text-xs md:text-sm">{feature}</span>
+                          <span className="text-gray-300 text-xs md:text-sm">
+                            {feature}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -1292,8 +1417,12 @@ export default function SelettoBarbershop() {
             className="text-center mt-8 md:mt-12"
           >
             <div className="bg-[#1f2937] rounded-lg p-4 md:p-6 border border-[#768ca4]/20 max-w-xl md:max-w-2xl mx-auto">
-              <h4 className="text-base md:text-lg font-bold text-[#c8a35f] mb-2 md:mb-3">{t.club.howItWorks.title}</h4>
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed">{t.club.howItWorks.description}</p>
+              <h4 className="text-base md:text-lg font-bold text-[#c8a35f] mb-2 md:mb-3">
+                {t.club.howItWorks.title}
+              </h4>
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                {t.club.howItWorks.description}
+              </p>
             </div>
           </motion.div>
         </div>
@@ -1309,43 +1438,53 @@ export default function SelettoBarbershop() {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">{t.reviews.title}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+              {t.reviews.title}
+            </h2>
             <div className="w-16 md:w-24 h-1 bg-[#c8a35f] mx-auto mb-6 md:mb-8"></div>
-            <p className="text-base md:text-xl text-gray-300">{t.reviews.subtitle}</p>
+            <p className="text-base md:text-xl text-gray-300">
+              {t.reviews.subtitle}
+            </p>
           </motion.div>
 
           {/* Mobile: Show limited reviews with expand option */}
           <div className="md:hidden">
             <div className="grid grid-cols-1 gap-4 mb-6">
-              {reviews.slice(0, showAllReviews ? undefined : 3).map((review, index) => (
-                <motion.div
-                  key={review.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="cursor-pointer"
-                  onClick={() => setSelectedReview(review.id)}
-                >
-                  <div className="bg-[#1f2937] rounded-lg overflow-hidden border border-[#768ca4]/20 hover:border-[#c8a35f]/50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    <div className="relative">
-                      <Image
-                        src={review.image || "/placeholder.svg"}
-                        alt={`${language === "pt" ? "Avaliação" : "Review"} ${review.id}`}
-                        width={320}
-                        height={200}
-                        className="w-full h-48 object-contain bg-white"
-                      />
-                      <div className="absolute top-2 right-2 bg-[#c8a35f] text-[#0e1728] px-2 py-1 rounded-full text-xs font-bold">
-                        5⭐
+              {reviews
+                .slice(0, showAllReviews ? undefined : 3)
+                .map((review, index) => (
+                  <motion.div
+                    key={review.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="cursor-pointer"
+                    onClick={() => setSelectedReview(review.id)}
+                  >
+                    <div className="bg-[#1f2937] rounded-lg overflow-hidden border border-[#768ca4]/20 hover:border-[#c8a35f]/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                      <div className="relative">
+                        <Image
+                          src={review.image || "/placeholder.svg"}
+                          alt={`${language === "pt" ? "Avaliação" : "Review"} ${
+                            review.id
+                          }`}
+                          width={320}
+                          height={200}
+                          className="w-full h-48 object-contain bg-white"
+                        />
+                        <div className="absolute top-2 right-2 bg-[#c8a35f] text-[#0e1728] px-2 py-1 rounded-full text-xs font-bold">
+                          5⭐
+                        </div>
+                      </div>
+                      <div className="p-3">
+                        <p className="text-gray-400 text-xs text-center">
+                          {t.reviews.clickToView}
+                        </p>
                       </div>
                     </div>
-                    <div className="p-3">
-                      <p className="text-gray-400 text-xs text-center">{t.reviews.clickToView}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
             </div>
 
             <div className="text-center">
@@ -1391,7 +1530,9 @@ export default function SelettoBarbershop() {
                     <div className="relative">
                       <Image
                         src={review.image || "/placeholder.svg"}
-                        alt={`${language === "pt" ? "Avaliação" : "Review"} ${review.id}`}
+                        alt={`${language === "pt" ? "Avaliação" : "Review"} ${
+                          review.id
+                        }`}
                         width={320}
                         height={240}
                         className="w-full h-60 object-contain bg-white"
@@ -1401,7 +1542,9 @@ export default function SelettoBarbershop() {
                       </div>
                     </div>
                     <div className="p-4">
-                      <p className="text-gray-400 text-sm text-center">{t.reviews.clickToView}</p>
+                      <p className="text-gray-400 text-sm text-center">
+                        {t.reviews.clickToView}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
@@ -1429,14 +1572,21 @@ export default function SelettoBarbershop() {
               >
                 <div className="p-4 md:p-6">
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg md:text-xl font-bold text-[#c8a35f]">{t.reviews.reviewTitle}</h3>
-                    <button onClick={() => setSelectedReview(null)} className="text-gray-400 hover:text-white">
+                    <h3 className="text-lg md:text-xl font-bold text-[#c8a35f]">
+                      {t.reviews.reviewTitle}
+                    </h3>
+                    <button
+                      onClick={() => setSelectedReview(null)}
+                      className="text-gray-400 hover:text-white"
+                    >
                       <X className="w-5 h-5 md:w-6 md:h-6" />
                     </button>
                   </div>
                   <Image
                     src={`/reviews/review-${selectedReview}.png`}
-                    alt={`${language === "pt" ? "Avaliação" : "Review"} ${selectedReview}`}
+                    alt={`${
+                      language === "pt" ? "Avaliação" : "Review"
+                    } ${selectedReview}`}
                     width={600}
                     height={400}
                     className="w-full rounded-lg object-contain bg-white"
@@ -1444,8 +1594,11 @@ export default function SelettoBarbershop() {
                   <div className="flex justify-between mt-4">
                     <button
                       onClick={() => {
-                        const prevId = selectedReview === 1 ? reviews.length : selectedReview - 1
-                        setSelectedReview(prevId)
+                        const prevId =
+                          selectedReview === 1
+                            ? reviews.length
+                            : selectedReview - 1;
+                        setSelectedReview(prevId);
                       }}
                       className="flex items-center text-[#c8a35f] hover:text-[#b8934f] text-sm md:text-base"
                     >
@@ -1454,8 +1607,11 @@ export default function SelettoBarbershop() {
                     </button>
                     <button
                       onClick={() => {
-                        const nextId = selectedReview === reviews.length ? 1 : selectedReview + 1
-                        setSelectedReview(nextId)
+                        const nextId =
+                          selectedReview === reviews.length
+                            ? 1
+                            : selectedReview + 1;
+                        setSelectedReview(nextId);
                       }}
                       className="flex items-center text-[#c8a35f] hover:text-[#b8934f] text-sm md:text-base"
                     >
@@ -1471,7 +1627,10 @@ export default function SelettoBarbershop() {
       </section>
 
       {/* Gallery Section - Enhanced */}
-      <section id="gallery" className="py-12 md:py-20 bg-[#1f2937] relative overflow-hidden">
+      <section
+        id="gallery"
+        className="py-12 md:py-20 bg-[#1f2937] relative overflow-hidden"
+      >
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-3 md:opacity-5">
           <div className="absolute top-10 left-10 w-12 h-12 md:w-20 md:h-20 border border-[#c8a35f] rounded-full"></div>
@@ -1487,7 +1646,9 @@ export default function SelettoBarbershop() {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">{t.gallery.title}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+              {t.gallery.title}
+            </h2>
             <div className="w-16 md:w-24 h-1 bg-[#c8a35f] mx-auto mb-6 md:mb-8"></div>
             <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto">
               {t.gallery.subtitle}
@@ -1504,17 +1665,23 @@ export default function SelettoBarbershop() {
           >
             {[
               {
-                icon: <Thermometer className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f]" />,
+                icon: (
+                  <Thermometer className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f]" />
+                ),
                 title: t.gallery.features.climatization.title,
                 description: t.gallery.features.climatization.description,
               },
               {
-                icon: <Coffee className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f]" />,
+                icon: (
+                  <Coffee className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f]" />
+                ),
                 title: t.gallery.features.coffee.title,
                 description: t.gallery.features.coffee.description,
               },
               {
-                icon: <Crown className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f]" />,
+                icon: (
+                  <Crown className="w-6 h-6 md:w-8 md:h-8 text-[#c8a35f]" />
+                ),
                 title: t.gallery.features.premium.title,
                 description: t.gallery.features.premium.description,
               },
@@ -1539,7 +1706,9 @@ export default function SelettoBarbershop() {
                     <h3 className="text-base md:text-lg font-bold text-white mb-2 md:mb-3 group-hover:text-[#c8a35f] transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed">{feature.description}</p>
+                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -1565,22 +1734,32 @@ export default function SelettoBarbershop() {
                     {[
                       {
                         src: "/gallery/main-salon-area.jpg",
-                        title: language === "pt" ? "Área Principal" : "Main Area",
+                        title:
+                          language === "pt" ? "Área Principal" : "Main Area",
                         aspect: "aspect-[3/4]",
                       },
                       {
                         src: "/gallery/professional-chairs.jpg",
-                        title: language === "pt" ? "Cadeiras Profissionais" : "Professional Chairs",
+                        title:
+                          language === "pt"
+                            ? "Cadeiras Profissionais"
+                            : "Professional Chairs",
                         aspect: "aspect-square",
                       },
                       {
                         src: "/gallery/storefront-exterior.jpg",
-                        title: language === "pt" ? "Fachada Externa" : "External Facade",
+                        title:
+                          language === "pt"
+                            ? "Fachada Externa"
+                            : "External Facade",
                         aspect: "aspect-[4/3]",
                       },
                       {
                         src: "/gallery/complete-interior.jpg",
-                        title: language === "pt" ? "Interior Completo" : "Complete Interior",
+                        title:
+                          language === "pt"
+                            ? "Interior Completo"
+                            : "Complete Interior",
                         aspect: "aspect-[3/4]",
                       },
                       {
@@ -1590,7 +1769,10 @@ export default function SelettoBarbershop() {
                       },
                       {
                         src: "/gallery/excellence-window.jpg",
-                        title: language === "pt" ? "Nossa Filosofia" : "Our Philosophy",
+                        title:
+                          language === "pt"
+                            ? "Nossa Filosofia"
+                            : "Our Philosophy",
                         aspect: "aspect-[4/3]",
                       },
                       {
@@ -1600,29 +1782,40 @@ export default function SelettoBarbershop() {
                       },
                       {
                         src: "/gallery/storefront-view.jpg",
-                        title: language === "pt" ? "Transparência" : "Transparency",
+                        title:
+                          language === "pt" ? "Transparência" : "Transparency",
                         aspect: "aspect-[3/4]",
                       },
                     ]
                       .concat([
                         {
                           src: "/gallery/main-salon-area.jpg",
-                          title: language === "pt" ? "Área Principal" : "Main Area",
+                          title:
+                            language === "pt" ? "Área Principal" : "Main Area",
                           aspect: "aspect-[3/4]",
                         },
                         {
                           src: "/gallery/professional-chairs.jpg",
-                          title: language === "pt" ? "Cadeiras Profissionais" : "Professional Chairs",
+                          title:
+                            language === "pt"
+                              ? "Cadeiras Profissionais"
+                              : "Professional Chairs",
                           aspect: "aspect-square",
                         },
                         {
                           src: "/gallery/storefront-exterior.jpg",
-                          title: language === "pt" ? "Fachada Externa" : "External Facade",
+                          title:
+                            language === "pt"
+                              ? "Fachada Externa"
+                              : "External Facade",
                           aspect: "aspect-[4/3]",
                         },
                         {
                           src: "/gallery/complete-interior.jpg",
-                          title: language === "pt" ? "Interior Completo" : "Complete Interior",
+                          title:
+                            language === "pt"
+                              ? "Interior Completo"
+                              : "Complete Interior",
                           aspect: "aspect-[3/4]",
                         },
                       ])
@@ -1645,7 +1838,9 @@ export default function SelettoBarbershop() {
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                              <h3 className="text-white font-bold text-sm mb-1">{item.title}</h3>
+                              <h3 className="text-white font-bold text-sm mb-1">
+                                {item.title}
+                              </h3>
                             </div>
                           </div>
                         </motion.div>
@@ -1667,12 +1862,18 @@ export default function SelettoBarbershop() {
                     {[
                       {
                         src: "/gallery/seletto-branding-detail.jpg",
-                        title: language === "pt" ? "Detalhes da Marca" : "Brand Details",
+                        title:
+                          language === "pt"
+                            ? "Detalhes da Marca"
+                            : "Brand Details",
                         aspect: "aspect-square",
                       },
                       {
                         src: "/gallery/salon-interior-view.jpg",
-                        title: language === "pt" ? "Vista Interior" : "Interior View",
+                        title:
+                          language === "pt"
+                            ? "Vista Interior"
+                            : "Interior View",
                         aspect: "aspect-[4/3]",
                       },
                       {
@@ -1682,7 +1883,10 @@ export default function SelettoBarbershop() {
                       },
                       {
                         src: "/gallery/excellence-window.jpg",
-                        title: language === "pt" ? "Nossa Filosofia" : "Our Philosophy",
+                        title:
+                          language === "pt"
+                            ? "Nossa Filosofia"
+                            : "Our Philosophy",
                         aspect: "aspect-square",
                       },
                       {
@@ -1692,29 +1896,40 @@ export default function SelettoBarbershop() {
                       },
                       {
                         src: "/gallery/storefront-view.jpg",
-                        title: language === "pt" ? "Transparência" : "Transparency",
+                        title:
+                          language === "pt" ? "Transparência" : "Transparency",
                         aspect: "aspect-[3/4]",
                       },
                       {
                         src: "/gallery/complete-interior.jpg",
-                        title: language === "pt" ? "Interior Completo" : "Complete Interior",
+                        title:
+                          language === "pt"
+                            ? "Interior Completo"
+                            : "Complete Interior",
                         aspect: "aspect-square",
                       },
                       {
                         src: "/gallery/main-salon-area.jpg",
-                        title: language === "pt" ? "Área Principal" : "Main Area",
+                        title:
+                          language === "pt" ? "Área Principal" : "Main Area",
                         aspect: "aspect-[4/3]",
                       },
                     ]
                       .concat([
                         {
                           src: "/gallery/seletto-branding-detail.jpg",
-                          title: language === "pt" ? "Detalhes da Marca" : "Brand Details",
+                          title:
+                            language === "pt"
+                              ? "Detalhes da Marca"
+                              : "Brand Details",
                           aspect: "aspect-square",
                         },
                         {
                           src: "/gallery/salon-interior-view.jpg",
-                          title: language === "pt" ? "Vista Interior" : "Interior View",
+                          title:
+                            language === "pt"
+                              ? "Vista Interior"
+                              : "Interior View",
                           aspect: "aspect-[4/3]",
                         },
                         {
@@ -1724,7 +1939,10 @@ export default function SelettoBarbershop() {
                         },
                         {
                           src: "/gallery/excellence-window.jpg",
-                          title: language === "pt" ? "Nossa Filosofia" : "Our Philosophy",
+                          title:
+                            language === "pt"
+                              ? "Nossa Filosofia"
+                              : "Our Philosophy",
                           aspect: "aspect-square",
                         },
                       ])
@@ -1747,7 +1965,9 @@ export default function SelettoBarbershop() {
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                              <h3 className="text-white font-bold text-sm mb-1">{item.title}</h3>
+                              <h3 className="text-white font-bold text-sm mb-1">
+                                {item.title}
+                              </h3>
                             </div>
                           </div>
                         </motion.div>
@@ -1780,75 +2000,136 @@ export default function SelettoBarbershop() {
                     {
                       src: "/gallery/main-salon-area.jpg",
                       title: language === "pt" ? "Área Principal" : "Main Area",
-                      desc: language === "pt" ? "Estações de corte modernas" : "Modern cutting stations",
+                      desc:
+                        language === "pt"
+                          ? "Estações de corte modernas"
+                          : "Modern cutting stations",
                       size: "w-80 h-60",
                     },
                     {
                       src: "/gallery/professional-chairs.jpg",
-                      title: language === "pt" ? "Cadeiras Profissionais" : "Professional Chairs",
-                      desc: language === "pt" ? "Equipamentos de alta qualidade" : "High-quality equipment",
+                      title:
+                        language === "pt"
+                          ? "Cadeiras Profissionais"
+                          : "Professional Chairs",
+                      desc:
+                        language === "pt"
+                          ? "Equipamentos de alta qualidade"
+                          : "High-quality equipment",
                       size: "w-72 h-72",
                     },
                     {
                       src: "/gallery/storefront-exterior.jpg",
-                      title: language === "pt" ? "Fachada Externa" : "External Facade",
-                      desc: language === "pt" ? "Design moderno e atrativo" : "Modern and attractive design",
+                      title:
+                        language === "pt"
+                          ? "Fachada Externa"
+                          : "External Facade",
+                      desc:
+                        language === "pt"
+                          ? "Design moderno e atrativo"
+                          : "Modern and attractive design",
                       size: "w-96 h-64",
                     },
                     {
                       src: "/gallery/seletto-branding-detail.jpg",
-                      title: language === "pt" ? "Detalhes da Marca" : "Brand Details",
-                      desc: language === "pt" ? "Atenção aos detalhes" : "Attention to detail",
+                      title:
+                        language === "pt"
+                          ? "Detalhes da Marca"
+                          : "Brand Details",
+                      desc:
+                        language === "pt"
+                          ? "Atenção aos detalhes"
+                          : "Attention to detail",
                       size: "w-64 h-64",
                     },
                     {
                       src: "/gallery/complete-interior.jpg",
-                      title: language === "pt" ? "Interior Completo" : "Complete Interior",
-                      desc: language === "pt" ? "Ambiente acolhedor" : "Welcoming environment",
+                      title:
+                        language === "pt"
+                          ? "Interior Completo"
+                          : "Complete Interior",
+                      desc:
+                        language === "pt"
+                          ? "Ambiente acolhedor"
+                          : "Welcoming environment",
                       size: "w-80 h-60",
                     },
                     {
                       src: "/gallery/classic-barber-pole.jpg",
                       title: language === "pt" ? "Tradição" : "Tradition",
-                      desc: language === "pt" ? "Símbolo clássico" : "Classic symbol",
+                      desc:
+                        language === "pt"
+                          ? "Símbolo clássico"
+                          : "Classic symbol",
                       size: "w-56 h-80",
                     },
                   ]
                     .concat([
                       {
                         src: "/gallery/main-salon-area.jpg",
-                        title: language === "pt" ? "Área Principal" : "Main Area",
-                        desc: language === "pt" ? "Estações de corte modernas" : "Modern cutting stations",
+                        title:
+                          language === "pt" ? "Área Principal" : "Main Area",
+                        desc:
+                          language === "pt"
+                            ? "Estações de corte modernas"
+                            : "Modern cutting stations",
                         size: "w-80 h-60",
                       },
                       {
                         src: "/gallery/professional-chairs.jpg",
-                        title: language === "pt" ? "Cadeiras Profissionais" : "Professional Chairs",
-                        desc: language === "pt" ? "Equipamentos de alta qualidade" : "High-quality equipment",
+                        title:
+                          language === "pt"
+                            ? "Cadeiras Profissionais"
+                            : "Professional Chairs",
+                        desc:
+                          language === "pt"
+                            ? "Equipamentos de alta qualidade"
+                            : "High-quality equipment",
                         size: "w-72 h-72",
                       },
                       {
                         src: "/gallery/storefront-exterior.jpg",
-                        title: language === "pt" ? "Fachada Externa" : "External Facade",
-                        desc: language === "pt" ? "Design moderno e atrativo" : "Modern and attractive design",
+                        title:
+                          language === "pt"
+                            ? "Fachada Externa"
+                            : "External Facade",
+                        desc:
+                          language === "pt"
+                            ? "Design moderno e atrativo"
+                            : "Modern and attractive design",
                         size: "w-96 h-64",
                       },
                       {
                         src: "/gallery/seletto-branding-detail.jpg",
-                        title: language === "pt" ? "Detalhes da Marca" : "Brand Details",
-                        desc: language === "pt" ? "Atenção aos detalhes" : "Attention to detail",
+                        title:
+                          language === "pt"
+                            ? "Detalhes da Marca"
+                            : "Brand Details",
+                        desc:
+                          language === "pt"
+                            ? "Atenção aos detalhes"
+                            : "Attention to detail",
                         size: "w-64 h-64",
                       },
                       {
                         src: "/gallery/complete-interior.jpg",
-                        title: language === "pt" ? "Interior Completo" : "Complete Interior",
-                        desc: language === "pt" ? "Ambiente acolhedor" : "Welcoming environment",
+                        title:
+                          language === "pt"
+                            ? "Interior Completo"
+                            : "Complete Interior",
+                        desc:
+                          language === "pt"
+                            ? "Ambiente acolhedor"
+                            : "Welcoming environment",
                         size: "w-80 h-60",
                       },
                       {
                         src: "/gallery/classic-barber-pole.jpg",
                         title: language === "pt" ? "Tradição" : "Tradition",
-                        desc: language === "pt" ? "Símbolo clássico" : "Classic symbol",
+                        desc:
+                          language === "pt"
+                            ? "Símbolo clássico"
+                            : "Classic symbol",
                         size: "w-56 h-80",
                       },
                     ])
@@ -1871,7 +2152,9 @@ export default function SelettoBarbershop() {
                           </div>
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                            <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
+                            <h3 className="text-white font-bold text-lg mb-2">
+                              {item.title}
+                            </h3>
                             <p className="text-gray-300 text-sm">{item.desc}</p>
                           </div>
                         </div>
@@ -1894,76 +2177,124 @@ export default function SelettoBarbershop() {
                   {[
                     {
                       src: "/gallery/excellence-window.jpg",
-                      title: language === "pt" ? "Nossa Filosofia" : "Our Philosophy",
-                      desc: language === "pt" ? "Excelência em cada detalhe" : "Excellence in every detail",
+                      title:
+                        language === "pt"
+                          ? "Nossa Filosofia"
+                          : "Our Philosophy",
+                      desc:
+                        language === "pt"
+                          ? "Excelência em cada detalhe"
+                          : "Excellence in every detail",
                       size: "w-88 h-56",
                     },
                     {
                       src: "/gallery/motivational-wall-art.jpg",
                       title: language === "pt" ? "Valores" : "Values",
-                      desc: language === "pt" ? "Disciplina, foco e execução" : "Discipline, focus and execução",
+                      desc:
+                        language === "pt"
+                          ? "Disciplina, foco e execução"
+                          : "Discipline, focus and execução",
                       size: "w-64 h-64",
                     },
                     {
                       src: "/gallery/salon-interior-view.jpg",
-                      title: language === "pt" ? "Vista Interior" : "Interior View",
-                      desc: language === "pt" ? "Ambiente profissional" : "Professional environment",
+                      title:
+                        language === "pt" ? "Vista Interior" : "Interior View",
+                      desc:
+                        language === "pt"
+                          ? "Ambiente profissional"
+                          : "Professional environment",
                       size: "w-80 h-60",
                     },
                     {
                       src: "/gallery/storefront-view.jpg",
-                      title: language === "pt" ? "Transparência" : "Transparency",
-                      desc: language === "pt" ? "Ambiente aberto e acolhedor" : "Open and welcoming",
+                      title:
+                        language === "pt" ? "Transparência" : "Transparency",
+                      desc:
+                        language === "pt"
+                          ? "Ambiente aberto e acolhedor"
+                          : "Open and welcoming",
                       size: "w-72 h-72",
                     },
                     {
                       src: "/gallery/classic-barber-pole.jpg",
                       title: language === "pt" ? "Tradição" : "Tradition",
-                      desc: language === "pt" ? "Herança da barbearia" : "Barbershop heritage",
+                      desc:
+                        language === "pt"
+                          ? "Herança da barbearia"
+                          : "Barbershop heritage",
                       size: "w-56 h-80",
                     },
                     {
                       src: "/gallery/professional-chairs.jpg",
                       title: language === "pt" ? "Conforto" : "Comfort",
-                      desc: language === "pt" ? "Máximo conforto para clientes" : "Maximum comfort for clients",
+                      desc:
+                        language === "pt"
+                          ? "Máximo conforto para clientes"
+                          : "Maximum comfort for clients",
                       size: "w-80 h-60",
                     },
                   ]
                     .concat([
                       {
                         src: "/gallery/excellence-window.jpg",
-                        title: language === "pt" ? "Nossa Filosofia" : "Our Philosophy",
-                        desc: language === "pt" ? "Excelência em cada detalhe" : "Excellence in every detail",
+                        title:
+                          language === "pt"
+                            ? "Nossa Filosofia"
+                            : "Our Philosophy",
+                        desc:
+                          language === "pt"
+                            ? "Excelência em cada detalhe"
+                            : "Excellence in every detail",
                         size: "w-88 h-56",
                       },
                       {
                         src: "/gallery/motivational-wall-art.jpg",
                         title: language === "pt" ? "Valores" : "Values",
-                        desc: language === "pt" ? "Disciplina, foco e execução" : "Discipline, focus and execução",
+                        desc:
+                          language === "pt"
+                            ? "Disciplina, foco e execução"
+                            : "Discipline, focus and execução",
                         size: "w-64 h-64",
                       },
                       {
                         src: "/gallery/salon-interior-view.jpg",
-                        title: language === "pt" ? "Vista Interior" : "Interior View",
-                        desc: language === "pt" ? "Ambiente profissional" : "Professional environment",
+                        title:
+                          language === "pt"
+                            ? "Vista Interior"
+                            : "Interior View",
+                        desc:
+                          language === "pt"
+                            ? "Ambiente profissional"
+                            : "Professional environment",
                         size: "w-80 h-60",
                       },
                       {
                         src: "/gallery/storefront-view.jpg",
-                        title: language === "pt" ? "Transparência" : "Transparency",
-                        desc: language === "pt" ? "Ambiente aberto e acolhedor" : "Open and welcoming",
+                        title:
+                          language === "pt" ? "Transparência" : "Transparency",
+                        desc:
+                          language === "pt"
+                            ? "Ambiente aberto e acolhedor"
+                            : "Open and welcoming",
                         size: "w-72 h-72",
                       },
                       {
                         src: "/gallery/classic-barber-pole.jpg",
                         title: language === "pt" ? "Tradição" : "Tradition",
-                        desc: language === "pt" ? "Herança da barbearia" : "Barbershop heritage",
+                        desc:
+                          language === "pt"
+                            ? "Herança da barbearia"
+                            : "Barbershop heritage",
                         size: "w-56 h-80",
                       },
                       {
                         src: "/gallery/professional-chairs.jpg",
                         title: language === "pt" ? "Conforto" : "Comfort",
-                        desc: language === "pt" ? "Máximo conforto para clientes" : "Maximum comfort for clients",
+                        desc:
+                          language === "pt"
+                            ? "Máximo conforto para clientes"
+                            : "Maximum comfort for clients",
                         size: "w-80 h-60",
                       },
                     ])
@@ -1986,7 +2317,9 @@ export default function SelettoBarbershop() {
                           </div>
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                            <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
+                            <h3 className="text-white font-bold text-lg mb-2">
+                              {item.title}
+                            </h3>
                             <p className="text-gray-300 text-sm">{item.desc}</p>
                           </div>
                         </div>
@@ -2016,7 +2349,10 @@ export default function SelettoBarbershop() {
                 className="w-full md:w-auto border-[#c8a35f] text-[#c8a35f] hover:bg-[#c8a35f] hover:text-[#0e1728] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#c8a35f]/20 relative overflow-hidden group"
                 asChild
               >
-                <Link href="https://www.instagram.com/barbeariaseletto/" target="_blank">
+                <Link
+                  href="https://www.instagram.com/barbeariaseletto/"
+                  target="_blank"
+                >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-[#c8a35f]/20 to-transparent"
                     initial={{ x: "-100%" }}
@@ -2042,7 +2378,9 @@ export default function SelettoBarbershop() {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">{t.location.title}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+              {t.location.title}
+            </h2>
             <div className="w-16 md:w-24 h-1 bg-[#c8a35f] mx-auto mb-6 md:mb-8"></div>
           </motion.div>
 
@@ -2054,47 +2392,73 @@ export default function SelettoBarbershop() {
               viewport={{ once: true }}
             >
               <div className="bg-[#1f2937] rounded-lg p-6 md:p-8 border border-[#768ca4]/20">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#c8a35f]">{t.location.contactInfo}</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#c8a35f]">
+                  {t.location.contactInfo}
+                </h3>
 
                 <div className="space-y-4 md:space-y-6">
                   <div className="flex items-start space-x-3 md:space-x-4">
                     <MapPin className="w-5 h-5 md:w-6 md:h-6 text-[#c8a35f] mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-1 text-sm md:text-base">{t.location.address}</h4>
-                      <p className="text-gray-300 text-sm md:text-base">R. Lírio do Vale, 317 - Glória</p>
-                      <p className="text-gray-300 text-sm md:text-base">Belo Horizonte - MG, 30830-330</p>
+                      <h4 className="font-semibold mb-1 text-sm md:text-base">
+                        {t.location.address}
+                      </h4>
+                      <p className="text-gray-300 text-sm md:text-base">
+                        R. Lírio do Vale, 317 - Glória
+                      </p>
+                      <p className="text-gray-300 text-sm md:text-base">
+                        Belo Horizonte - MG, 30830-330
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3 md:space-x-4">
                     <Clock className="w-5 h-5 md:w-6 md:h-6 text-[#c8a35f] mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-1 text-sm md:text-base">{t.location.hours}</h4>
-                      <p className="text-gray-300 text-sm md:text-base">{t.location.schedule.weekdays}</p>
-                      <p className="text-gray-300 text-sm md:text-base">{t.location.schedule.saturday}</p>
-                      <p className="text-gray-300 text-sm md:text-base">{t.location.schedule.sunday}</p>
+                      <h4 className="font-semibold mb-1 text-sm md:text-base">
+                        {t.location.hours}
+                      </h4>
+                      <p className="text-gray-300 text-sm md:text-base">
+                        {t.location.schedule.weekdays}
+                      </p>
+                      <p className="text-gray-300 text-sm md:text-base">
+                        {t.location.schedule.saturday}
+                      </p>
+                      <p className="text-gray-300 text-sm md:text-base">
+                        {t.location.schedule.sunday}
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3 md:space-x-4">
                     <Phone className="w-5 h-5 md:w-6 md:h-6 text-[#c8a35f] mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-1 text-sm md:text-base">{t.location.phone}</h4>
-                      <p className="text-gray-300 text-sm md:text-base">(31) 3657-5007</p>
+                      <h4 className="font-semibold mb-1 text-sm md:text-base">
+                        {t.location.phone}
+                      </h4>
+                      <p className="text-gray-300 text-sm md:text-base">
+                        (31) 3657-5007
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3 md:space-x-4">
                     <Mail className="w-5 h-5 md:w-6 md:h-6 text-[#c8a35f] mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-1 text-sm md:text-base">{t.location.email}</h4>
-                      <p className="text-gray-300 text-sm md:text-base">barbeariaseletto@gmail.com</p>
+                      <h4 className="font-semibold mb-1 text-sm md:text-base">
+                        {t.location.email}
+                      </h4>
+                      <p className="text-gray-300 text-sm md:text-base">
+                        barbeariaseletto@gmail.com
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-[#768ca4]/20">
-                  <h4 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">{t.location.socialMedia}</h4>
+                  <h4 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">
+                    {t.location.socialMedia}
+                  </h4>
                   <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
                     <Button
                       size="sm"
@@ -2113,7 +2477,10 @@ export default function SelettoBarbershop() {
                       className="w-full sm:w-auto border-[#768ca4] text-[#768ca4] hover:bg-[#768ca4] hover:text-white text-xs md:text-sm"
                       asChild
                     >
-                      <Link href="https://www.instagram.com/barbeariaseletto/" target="_blank">
+                      <Link
+                        href="https://www.instagram.com/barbeariaseletto/"
+                        target="_blank"
+                      >
                         <Instagram className="w-3 h-3 md:w-4 md:h-4 mr-2" />
                         Instagram
                       </Link>
@@ -2145,7 +2512,10 @@ export default function SelettoBarbershop() {
                     className="rounded-lg"
                   />
                 </div>
-                <Button className="w-full bg-[#768ca4] hover:bg-[#5a6b7d] text-white text-sm md:text-base" asChild>
+                <Button
+                  className="w-full bg-[#768ca4] hover:bg-[#5a6b7d] text-white text-sm md:text-base"
+                  asChild
+                >
                   <Link
                     href="https://www.google.com/maps/dir//Barbearia+Seletto,+R.+L%C3%ADrio+do+Vale,+317+-+Gl%C3%B3ria,+Belo+Horizonte+-+MG,+30830-330"
                     target="_blank"
@@ -2169,27 +2539,38 @@ export default function SelettoBarbershop() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">{t.schedule.title}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+              {t.schedule.title}
+            </h2>
             <div className="w-16 md:w-24 h-1 bg-[#c8a35f] mx-auto mb-6 md:mb-8"></div>
             <p className="text-base md:text-xl text-gray-300 mb-8 md:mb-12 max-w-xl md:max-w-2xl mx-auto leading-relaxed">
               {t.schedule.subtitle}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
-              <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <Button
                   size="lg"
                   className="w-full bg-[#768ca4] hover:bg-[#5a6b7d] text-white py-4 md:py-6 text-base md:text-lg font-semibold"
                   asChild
                 >
-                  <Link href="https://apps.apple.com/br/app/barbearia-seletto/id1601245292" target="_blank">
+                  <Link
+                    href="https://apps.apple.com/br/app/barbearia-seletto/id1601245292"
+                    target="_blank"
+                  >
                     <Apple className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3" />
                     {t.schedule.ios}
                   </Link>
                 </Button>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <Button
                   size="lg"
                   className="w-full bg-[#768ca4] hover:bg-[#5a6b7d] text-white py-4 md:py-6 text-base md:text-lg font-semibold"
@@ -2205,7 +2586,10 @@ export default function SelettoBarbershop() {
                 </Button>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <Button
                   size="lg"
                   className="w-full bg-green-600 hover:bg-green-700 text-white py-4 md:py-6 text-base md:text-lg font-semibold"
@@ -2231,8 +2615,12 @@ export default function SelettoBarbershop() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 leading-tight">{t.cta.title}</h2>
-            <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed">{t.cta.subtitle}</p>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 leading-tight">
+              {t.cta.title}
+            </h2>
+            <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 leading-relaxed">
+              {t.cta.subtitle}
+            </p>
             <Button
               size="lg"
               className="w-full md:w-auto bg-[#c8a35f] hover:bg-[#b8934f] text-[#0e1728] px-8 md:px-12 py-4 text-base md:text-lg font-bold transition-all duration-300 hover:scale-105"
@@ -2258,11 +2646,15 @@ export default function SelettoBarbershop() {
                 height={60}
                 className="mx-auto md:mx-0 mb-3 md:mb-4 md:w-20 md:h-20"
               />
-              <p className="text-gray-400 text-sm md:text-base">{t.footer.tagline}</p>
+              <p className="text-gray-400 text-sm md:text-base">
+                {t.footer.tagline}
+              </p>
             </div>
 
             <div className="text-center">
-              <h4 className="font-semibold mb-3 md:mb-4 text-[#c8a35f] text-sm md:text-base">{t.footer.quickLinks}</h4>
+              <h4 className="font-semibold mb-3 md:mb-4 text-[#c8a35f] text-sm md:text-base">
+                {t.footer.quickLinks}
+              </h4>
               <div className="space-y-2">
                 <div>
                   <button
@@ -2292,7 +2684,9 @@ export default function SelettoBarbershop() {
             </div>
 
             <div className="text-center md:text-right">
-              <h4 className="font-semibold mb-3 md:mb-4 text-[#c8a35f] text-sm md:text-base">{t.footer.contact}</h4>
+              <h4 className="font-semibold mb-3 md:mb-4 text-[#c8a35f] text-sm md:text-base">
+                {t.footer.contact}
+              </h4>
               <p className="text-gray-400 text-xs md:text-sm">
                 R. Lírio do Vale, 317 - Glória
                 <br />
@@ -2304,11 +2698,15 @@ export default function SelettoBarbershop() {
           </div>
 
           <div className="border-t border-[#768ca4]/20 pt-6 md:pt-8 text-center">
-            <p className="text-gray-400 text-xs md:text-sm">© 2024 Seletto Barbearia. {t.footer.rights}</p>
-            <p className="text-gray-500 text-xs mt-1 md:mt-2">{t.footer.developer}</p>
+            <p className="text-gray-400 text-xs md:text-sm">
+              © 2024 Seletto Barbearia. {t.footer.rights}
+            </p>
+            <p className="text-gray-500 text-xs mt-1 md:mt-2">
+              {t.footer.developer}
+            </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
