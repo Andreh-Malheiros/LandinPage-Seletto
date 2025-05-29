@@ -2702,8 +2702,16 @@ export default function SelettoBarbershop() {
               © 2024 Seletto Barbearia. {t.footer.rights}
             </p>
             <p className="text-gray-500 text-xs mt-1 md:mt-2">
-              {t.footer.developer}
-            </p>
+  Desenvolvido por{" "}
+  <a
+    href="https://wa.me/+5531999656778"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline text-[#c8a35f] hover:text-[#e6b86a] transition-colors"
+  >
+    Andreh Malheiros
+  </a>
+</p>
           </div>
         </div>
       </footer>
