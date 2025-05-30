@@ -1,44 +1,48 @@
-# 💈 Barbearia Seletto - Landing Page
+# 💈 Landing Page - Barbearia Seletto
 
-Landing page desenvolvida para a Barbearia Seletto com foco em design moderno, responsividade, performance e conversão de clientes. O objetivo principal é apresentar os serviços, destacar o ambiente e facilitar o contato direto via WhatsApp.
+Landing page desenvolvida para a barbearia real **Seletto**, localizada em Brasília. O projeto foi vendido e entregue ao cliente, sendo o primeiro negócio fechado como freelancer.
 
-## 📌 Funcionalidades
+## 📌 Descrição
 
-- Layout moderno, responsivo e otimizado para dispositivos móveis
-- Seções organizadas:
-  - Apresentação da barbearia
-  - Galeria de fotos
-  - Lista de serviços
-  - Localização com Google Maps
-  - Botão de contato via WhatsApp
-- Animações suaves para uma navegação agradável
-- Hospedagem gratuita via Vercel
+Página com design responsivo, animações suaves e botão para contato direto via WhatsApp. Desenvolvida com foco na identidade visual do cliente.
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Tecnologias
 
-- **React**
-- **TypeScript**
-- **Vite**
-- **Tailwind CSS**
-- **Lucide React (ícones)**
-- **Framer Motion (animações)**
-- **Vercel** (deploy)
+- React
+- Tailwind CSS
+- Vite
+- Vercel (deploy)
 
-## 📁 Estrutura do Projeto
+## 🛠 Como executar
 
-src/
-├── assets/ # Imagens e mídias
-├── components/ # Componentes reutilizáveis
-├── sections/ # Seções da página
-├── App.tsx # Componente principal
-└── main.tsx # Ponto de entrada
+1. Clone o repositório:
+   ```
+   git clone https://github.com/Andreh-Malheiros/LandinPage-Seletto
+   ```
+2. Instale as dependências:
+   ```
+   npm install
+   ```
+3. Execute o projeto:
+   ```
+   npm run dev
+   ```
 
-----------------
+## 📸 Demonstração
 
-👨‍💻 Desenvolvimento
-Este site foi desenvolvido por Andreh Malheiros — criação de landing pages personalizadas para pequenos negócios, com foco em resultados, design e praticidade.
+Acesse online: [barbearia-seletto.vercel.app](https://barbearia-seletto.vercel.app)
 
-📌 Portfólio: [Portfolio 2025](https://andreh-portfolio.vercel.app/).
+## ⚙️ Funcionalidades
 
-📞 Entre em contato pelo WhatsApp para orçamentos e dúvidas. +55 (31) 99965-6778
+- Design 100% responsivo
+- Animações suaves
+- Botão de contato via WhatsApp
+- Estrutura otimizada para conversão
 
+## 📄 Status
+
+Concluído ✅
+
+## 📝 Licença
+
+Uso pessoal / projeto comercial real.
